@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {LoginService} from '../../models/login.service';
 import {Book} from '../../models/book.model';
 import {ActivatedRoute} from '@angular/router';
+import {CartService} from '../../models/cart.service';
+import {Cart} from '../../models/cart.model';
 
 @Component({
   selector: 'app-shop',
@@ -18,8 +20,18 @@ export class ShopComponent implements OnInit {
   isActive = 0;
 
   constructor(@Inject(USER_TOKEN) private user_service: Observable<User>,
-              private login: LoginService, private actr: ActivatedRoute) {
-    actr.data.value[0].books.forEach(book => this.books.push(new Book(book['title'], book['author'], book['description'], book['category'], book['img'])));
+              private login: LoginService, private actr: ActivatedRoute, private cart_service: CartService) {
+    actr.data.value[0][0].books.forEach(book => this.books.push(new Book(book['id'], book['title'],
+      book['author'], book['description'], book['category'], book['img'], book['price'])));
+    actr.data.value[0][1].cart.forEach(book => {
+      this.cart_service.cart.push(
+        {
+          book:
+            new Book(book['id'], book['title'], book['author'], book['description'], book['category'], book['img'], book['price']),
+          qty: book['qty']
+        });
+    });
+    console.log(this.cart_service.cart);
     this.login.isLogged = true;
     this.isActive = 0;
     this.category = this.books[0].category;

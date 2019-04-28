@@ -5,9 +5,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {ShopComponent} from './shop.component';
 import {ProfileComponent} from './profile/profile.component';
 import {BookCategoryComponent} from './book-category/book-category.component';
-import {BookService} from '../../models/books.service';
 import {BookCardComponent} from './book-category/book-card/book-card.component';
 import {CardColorDirective} from './book-category/card-color.directive';
+import {BookDisplayComponent} from './cart/book-display/book-display.component';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -22,10 +23,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CartComponent, ShopComponent, ProfileComponent, BookCategoryComponent, BookCardComponent, CardColorDirective],
+  declarations: [CartComponent, ShopComponent, ProfileComponent, BookCategoryComponent, BookCardComponent,
+    CardColorDirective,
+    BookDisplayComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   providers: []
 })
