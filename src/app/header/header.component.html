@@ -1,0 +1,24 @@
+<div id="header" class=" d-flex flex-row">
+  <h3><a [routerLink]="login.isLogged? ['/shop']: ['/']"> ESKD</a>
+    <small>Ecommerce App</small>
+  </h3>
+  <ul class="list-inline ml-auto mt-auto">
+    <li *ngIf="login.isLogged" class="list-inline-item">
+      <app-search-bar></app-search-bar>
+    </li>
+
+    <li *ngIf="!login.isLogged" class="list-inline-item"><a [routerLink]="['login']">Log in</a></li>
+    <li *ngIf="login.isLogged" class="list-inline-item"><a [routerLink]="['shop','profile']"><i class="fa fa-user"
+                                                                                                aria-hidden="true"></i>
+      Profile</a></li>
+    <li *ngIf="login.isLogged" class="list-inline-item"><a [routerLink]="['shop','cart']">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+    <li *ngIf="login.isLogged" class="list-inline-item"><a [routerLink]="['/']" (click)="logout()">Log out</a></li>
+    <li *ngIf="!login.isLogged" class="list-inline-item"><a [routerLink]="['signup']">Sign up</a></li>
+  </ul>
+
+</div>
+
+
+<router-outlet></router-outlet>
+

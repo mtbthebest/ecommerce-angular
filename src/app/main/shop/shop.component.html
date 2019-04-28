@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <app-book-category [categories]="get_category()" [isActive]="isActive"
+                         (onCategoryClick)="category=$event"></app-book-category>
+    </div>
+    <div class="col-8">
+      <app-book-card [books]="books" [category]="category"></app-book-card>
+    </div>
+  </div>
+</div>

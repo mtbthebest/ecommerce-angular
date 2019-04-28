@@ -1,0 +1,5 @@
+<div class="list-group" *ngFor="let category of categories let i=index">
+  <a routerLink="/shop" class="list-group-item list-group-item-action"
+     [ngClass]="{active: isActive == categories.indexOf(category)}"
+     (click)="changeCategory(category, i)">{{ category }}</a>
+</div>

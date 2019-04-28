@@ -1,0 +1,21 @@
+<div id="signup" class="container">
+  <div class="errors" *ngIf="form.touched && submitted">
+    <ul *ngFor="let error of form.getErrors()">
+      <li>{{ error }}</li>
+    </ul>
+  </div>
+  <form novalidate [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group" *ngFor="let key of this.getControls()">
+      <label for="{{ key }}">{{ form.controls[key]['label'] }}</label>
+      <div [ngSwitch]="form.controls[key]['property']">
+        <input *ngSwitchCase="'email'" type="email" class="form-control" formControlName="{{ key }}"/>
+        <input *ngSwitchCase="'password'" type="password" class="form-control" formControlName="{{ key }}"/>
+        <input *ngSwitchDefault type="text" class="form-control" formControlName="{{ key }}"/>
+
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  </form>
+
+</div>

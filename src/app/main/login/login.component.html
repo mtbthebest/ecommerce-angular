@@ -1,0 +1,23 @@
+<form class="ml-5 mt-2" (ngSubmit)="submit(form)" #form="ngForm">
+  <div class="errors" *ngIf="submitted && form.invalid">
+    The following errors happened
+    <ul *ngFor="let message of errors">
+      <li>{{ message }}</li>
+    </ul>
+  </div>
+  <div class="form-group row">
+    <label for="email" class="col-form-label col-sm-2">Email: </label>
+    <div class="col-md-10">
+      <input class="form-control col-md-5" type="email" placeholder="Email" name="email" id="email"
+             [ngModel]="'webdev030518@gmail.com'" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="password" class="col-form-label col-sm-2">Password: </label>
+    <div class="col-md-10">
+      <input class="form-control col-md-5" type="password" placeholder="Password" name="password" id="password"
+             [ngModel]="'password'" required minlength="8">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary offset-sm-5">Log in</button>
+</form>
