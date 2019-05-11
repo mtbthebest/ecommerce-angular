@@ -5,8 +5,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 from sqlalchemy.orm import relationship, backref
 from werkzeug.security import generate_password_hash, check_password_hash
+from config import Config
 
-engine = create_engine( 'mysql+pymysql://root:mtb@localhost/shopping_db')
+engine = create_engine(Config.SQLALCHEMY_DATABASE_URI)
 Base = declarative_base()
 session = sessionmaker(bind=engine, autocommit = True)()
 
