@@ -54,11 +54,4 @@ export class ShopComponent implements OnInit {
     );
     return this.categories;
   }
-
-  //
-  // get_books() {
-  //   return this.books;
-  // }
-
-
 }
