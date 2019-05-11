@@ -31,7 +31,6 @@ export class ShopComponent implements OnInit {
           qty: book['qty']
         });
     });
-    console.log(this.cart_service.cart);
     this.login.isLogged = true;
     this.isActive = 0;
     this.category = this.books[0].category;

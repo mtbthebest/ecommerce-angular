@@ -12,7 +12,8 @@
                                                                                                 aria-hidden="true"></i>
       Profile</a></li>
     <li *ngIf="login.isLogged" class="list-inline-item"><a [routerLink]="['shop','cart']">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+      <i class="fa fa-shopping-cart" aria-hidden="true"><span class="badge">{{ cart_service.cart.length}}</span>
+      </i></a></li>
     <li *ngIf="login.isLogged" class="list-inline-item"><a [routerLink]="['/']" (click)="logout()">Log out</a></li>
     <li *ngIf="!login.isLogged" class="list-inline-item"><a [routerLink]="['signup']">Sign up</a></li>
   </ul>

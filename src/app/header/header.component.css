@@ -14,3 +14,11 @@ h3 small {
 #main img {
   width: 75%;
 }
+
+.badge {
+  position: relative;
+  top: -0.8rem;
+  left: -.5rem;
+  color: chocolate;
+  font-size: 0.9rem;
+}

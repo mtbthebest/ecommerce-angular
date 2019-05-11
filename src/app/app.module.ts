@@ -10,6 +10,7 @@ import {SearchBarComponent} from './search-bar/search-bar.component';
 import {Book} from './models/book.model';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {CartService} from './models/cart.service';
 
 export let BACKEND_URL = 'http://localhost:5000';
 export let BOOKS_SERVICE = new InjectionToken('books');
@@ -30,6 +31,7 @@ export let BOOKS_SERVICE = new InjectionToken('books');
   providers: [
 
     {provide: 'url', useValue: BACKEND_URL},
+    CartService
 
   ],
   exports: [

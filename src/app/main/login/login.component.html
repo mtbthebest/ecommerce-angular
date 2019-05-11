@@ -8,15 +8,15 @@
   <div class="form-group row">
     <label for="email" class="col-form-label col-sm-2">Email: </label>
     <div class="col-md-10">
-      <input class="form-control col-md-5" type="email" placeholder="Email" name="email" id="email"
-             [ngModel]="'webdev030518@gmail.com'" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <input class="form-control col-md-5" type="email" placeholder="Email" name="email" id="email" [ngModel]="email"
+             required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
     </div>
   </div>
   <div class="form-group row">
     <label for="password" class="col-form-label col-sm-2">Password: </label>
     <div class="col-md-10">
       <input class="form-control col-md-5" type="password" placeholder="Password" name="password" id="password"
-             [ngModel]="'password'" required minlength="8">
+             [ngModel]="password" required>
     </div>
   </div>
   <button type="submit" class="btn btn-primary offset-sm-5">Log in</button>

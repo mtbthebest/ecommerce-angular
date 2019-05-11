@@ -1,0 +1,19 @@
+<div class="row" style="border: 2px gray solid; border-radius: 0.3rem; margin-bottom: 2rem">
+  <div class="col-3">
+    <img [src]="cart_book['book'].img" width="200rem">
+  </div>
+  <div class="col-3" style="font-size: 1.5rem ">
+    <p>{{ cart_book['book'].title }}</p>
+    <p class="text-info">{{ cart_book['book'].author }}</p>
+  </div>
+  <div class="col-3">
+    <div class="col-5" style="font-size: 1.5rem">
+      Price: ${{ cart_book['book'].price }}
+    </div>
+  </div>
+  <div class="col-3">
+    <label for="qty">Qty</label>
+    <input type="number" class="form-control col-4" [(ngModel)]="cart_book['qty']" id="qty">
+  </div>
+
+</div>
